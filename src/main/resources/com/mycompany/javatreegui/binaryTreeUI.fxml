@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import com.mycompany.javatreegui.BstPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+<!-- Controller = Binary Search Tree Page -->
+<VBox alignment="TOP_CENTER" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" 
+    fx:controller="com.mycompany.javatreegui.BSTController"
+    style = "-fx-background-color: #fefae0;">
+    <!-- Heading VBox -->
+    <VBox style="-fx-background-color: #606c38; -fx-padding: 10;" alignment="CENTER">
+      <Label text="BINARY SEARCH TREE" style="-fx-text-fill: #283618; -fx-font-weight: bold;">
+         <font>
+               <Font size="20.0"/>
+         </font>
+      </Label>
+      <Label text="VISUALIZER" style="-fx-text-fill: #283618; -fx-font-weight: bold;">
+         <font>
+               <Font size="18.0"/>
+         </font>
+      </Label>
+    </VBox>
+    <!-- HBox to hold all the function buttons-->
+    <HBox style="-fx-background-color: lightgrey; -fx-padding: 10; -fx-border-color: black; -fx-border-width: 5;" alignment="CENTER" spacing = "10">        
+        <Label text="Value: " style = "-fx-font-weight: bold">
+            <font>
+                <Font size="20.0"/>
+            </font>
+        </Label>    
+        <TextField fx:id="textField" promptText="Enter Node Value" />
+        <!--Insert Value Button-->
+        <Button fx:id="insertButton" text="INSERT" onAction="#insertValue" 
+            style="-fx-background-color: #dda15e; -fx-font-weight: bold;"
+            onMouseEntered="#handleMouseEntered" onMouseExited="#handleMouseExited">
+               <prefHeight>
+                  30
+               </prefHeight>
+               <prefWidth>
+                  90
+               </prefWidth>
+            </Button>
+        <!--Delete Value Button-->
+        <Button fx:id="deleteButton" text="DELETE" onAction="#deleteValue" 
+            style="-fx-background-color: #dda15e; -fx-font-weight: bold;"
+            onMouseEntered="#handleMouseEntered" onMouseExited="#handleMouseExited">
+               <prefHeight>
+                  30
+               </prefHeight>
+               <prefWidth>
+                  90
+               </prefWidth>
+            </Button>
+        <!--Search Value Button-->
+        <Button fx:id="searchButton" text="SEARCH" onAction="#searchValue" 
+            style="-fx-background-color: #dda15e; -fx-font-weight: bold;"
+            onMouseEntered="#handleMouseEntered" onMouseExited="#handleMouseExited">
+               <prefHeight>
+                  30
+               </prefHeight>
+               <prefWidth>
+                  90
+               </prefWidth>
+        </Button>
+    </HBox>
+    <BstPane fx:id="bstPane" VBox.vgrow="ALWAYS" />
+    <!--Hbox for Stats and Home Button-->
+    <HBox style="-fx-background-color: white; -fx-padding: 10; -fx-border-color: black; -fx-border-width: 2" alignment="BOTTOM_RIGHT" spacing = "400">
+        <!--Performance Stats-->
+        <VBox spacing="10">
+            <Label fx:id="statsText1" text="Time Taken for Operation:    Nodes Travelled: " style="-fx-text-fill: black; -fx-font-weight: bold;">
+                <font>
+                    <Font size="16.0"/>
+                </font>
+            </Label>
+        </VBox>
+        <!--Home Button-->
+        <Button fx:id="homeButton" text="HOME" onAction="#goHome" 
+            style="-fx-background-color: #dda15e; -fx-font-weight: bold;"
+            onMouseEntered="#handleMouseEntered" onMouseExited="#handleMouseExited">
+            <prefHeight>
+                40
+            </prefHeight>
+            <prefWidth>
+                75
+            </prefWidth>
+        </Button>
+    </HBox>
+    <children>
+    </children>
+</VBox>
